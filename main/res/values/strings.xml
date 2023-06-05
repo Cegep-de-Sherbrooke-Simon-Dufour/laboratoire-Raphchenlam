@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lab_5_1</string>
+    <string name="newUserBtn">Enter new User</string>
+    <string name="userCreationTitle">Create a new USer</string>
+    <string name="cancelBtn">Cancel</string>
+    <string name="saveBtn">Save</string>
+    <string name="emailTextview">Email : </string>
+    <string name="nameTextview">Name : </string>
+</resources>
