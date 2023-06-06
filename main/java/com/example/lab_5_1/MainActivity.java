@@ -1,4 +1,4 @@
-package com.example.lab_5_1;
+package com.example.lab_5_1; // lab 6.1 in reality
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
