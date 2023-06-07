@@ -13,7 +13,14 @@ import javax.inject.Singleton;
 public class UserRepository {
 
     @Inject
-    public UserRepository(){}
+    public UserRepository(){
+        users.add(new User("Maxime Marchand", "mmm@gmail.com"));
+        users.add(new User("Raphaël Chenard-Lamothe", "raphael.chenard@gmail.com"));
+        users.add(new User("David Beaudry", "d.beaudry@gmail.com"));
+        users.add(new User("Francis Maynard", "F.maynard@gmail.com"));
+        usersLiveData.setValue(new ArrayList<>(users));
+
+    }
 
     private ArrayList<User> users = new ArrayList<>();
     private final MutableLiveData<List<User>> usersLiveData = new MutableLiveData<>(new ArrayList<>(users));

@@ -14,7 +14,7 @@ public class add_user extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_user);
+        setContentView(R.layout.fragment_add_user);
 
         Button saveBtn = findViewById(R.id.saveBtn);
         saveBtn.setOnClickListener(saveBtnListener);

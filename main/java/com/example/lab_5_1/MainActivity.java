@@ -31,56 +31,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_activity);
 
-        UserListViewModel viewModel = new ViewModelProvider(this).get(UserListViewModel.class);
-
-        viewModel.addUser("Maxime Marchand", "mmm@gmail.com");
-        viewModel.addUser("Raphaël Chenard-Lamothe", "raphael.chenard@gmail.com");
-        viewModel.addUser("David Beaudry", "d.beaudry@gmail.com");
-        viewModel.addUser("Francis Maynard", "F.maynard@gmail.com");
-
-        //
-        RecyclerView recycler = findViewById(R.id.recyclerView);
-        recycler.setLayoutManager(new LinearLayoutManager(this));
-        CustomAdapter adapter = new CustomAdapter();
-        recycler.setAdapter(adapter);
-        //
-
-        viewModel.getUsers().observe(this, users -> {
-            adapter.submitList(new ArrayList<>(users));
-        });
-
-        ActivityResultLauncher<Intent> mGetContent = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                new ActivityResultCallback<ActivityResult>() {
-                    @Override
-                    public void onActivityResult(ActivityResult result) {
-                        if (result.getResultCode() == RESULT_OK) {
-                            Intent Data =result.getData();
-                            _newName = Data.getStringExtra("name");
-                            _newEmail = Data.getStringExtra("email");
-                            viewModel.addUser(_newName, _newEmail);
-                        }
-                    }
-                }
-        );
-
-        adapter.setCallbackedUser(new RecyclerCallback<User>() {
-            @Override
-            public void returnValue(User user) {
-                viewModel.removeUser(user);
-            }
-        });
-
-        Button addBtn = findViewById(R.id.addBtn);
-        addBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent( MainActivity.this, add_user.class);
-                mGetContent.launch(intent);
-            }
-        });
 
     }
 
