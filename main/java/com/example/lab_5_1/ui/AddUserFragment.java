@@ -32,7 +32,6 @@ public class AddUserFragment extends Fragment {
 
         UserListViewModel viewModel = new ViewModelProvider(requireActivity()).get(UserListViewModel.class);
 
-
         Button saveBtn = view.findViewById(R.id.saveBtn);
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
