@@ -7,21 +7,26 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
+import java.util.Map;
 
 @Dao
 public interface UserDao {
     @Query("SELECT * FROM users")
     LiveData<List<User>> getAll();
 
-    @Query("SELECT * FROM users WHERE user_id IN (:userIds)")
-    List<User> loadAllByIds(int[] userIds);
-
-    @Query("SELECT * FROM users WHERE user_name LIKE :name AND " + "user_email LIKE :email LIMIT 1")
-    User findByInfo(String name, String email);
-
     @Insert
     void insertAll(User ... user_s);
 
     @Delete
     void delete(User user);
+
+
+    @Query("SELECT * FROM Items WHERE ownerId = :userId")
+    LiveData<List<Item>> getAllItems(int userId);
+
+    @Insert
+    void insertAll(Item ... item_s);
+
+    @Delete
+    void delete(Item item);
 }
