@@ -52,7 +52,9 @@ public class UserListFragment extends Fragment {
         adapter.setCallbackedUser(new RecyclerCallback<User>() {
             @Override
             public void returnValue(User user) {
-                viewModel.removeUser(user);
+                Bundle bundle = new Bundle();
+                bundle.putInt("ownerId", user.user_id);
+                Navigation.findNavController(view).navigate(R.id.action_userListFragment_to_userDetails_ItemsAddAndRemove, bundle);
             }
         });
 

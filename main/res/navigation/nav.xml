@@ -18,10 +18,23 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/userListFragment" />
+        <action
+            android:id="@+id/action_userListFragment_to_userDetails_ItemsAddAndRemove"
+            app:destination="@id/userDetails_ItemsAddAndRemove"
+            app:popUpTo="@id/userListFragment" />
     </fragment>
     <fragment
         android:id="@+id/addUserFragment"
         android:name="com.example.lab_5_1.ui.AddUserFragment"
         android:label="Ajouter un contact"
         tools:layout="@layout/fragment_add_user" />
+    <fragment
+        android:id="@+id/userDetails_ItemsAddAndRemove"
+        android:name="com.example.lab_5_1.ui.UserDetails_ItemsAddAndRemove"
+        android:label="fragment_user_details__items_add_and_remove"
+        tools:layout="@layout/fragment_user_details__items_add_and_remove" >
+        <argument
+            android:name="ownerId"
+            app:argType="integer" />
+    </fragment>
 </navigation>
