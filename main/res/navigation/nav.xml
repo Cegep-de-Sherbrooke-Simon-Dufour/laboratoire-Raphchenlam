@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/userListFragment"
-        android:name="com.example.lab_5_1.UserListFragment"
-        android:label="fragment_user_list"
-        tools:layout="@layout/fragment_user_list" >
+        android:name="com.example.lab_5_1.ui.UserListFragment"
+        android:label="Liste de contact"
+        tools:layout="@layout/fragment_user_list">
         <action
             android:id="@+id/action_userListFragment_to_addUserFragment"
             app:destination="@id/addUserFragment"
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/addUserFragment"
-        android:name="com.example.lab_5_1.AddUserFragment"
-        android:label="fragment_add_user"
+        android:name="com.example.lab_5_1.ui.AddUserFragment"
+        android:label="Ajouter un contact"
         tools:layout="@layout/fragment_add_user" />
 </navigation>
